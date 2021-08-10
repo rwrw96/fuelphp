@@ -17,6 +17,10 @@
     <input type="submit" name="submit" value="投稿する">
     </form>
     <?php echo $title; ?>
+    <?php echo Html::anchor('index.php/post', '一覧確認する'); ?>
+    <?php echo Asset::img('164641_01.png'); ?>
+
+
     
 </body>
 </html>
