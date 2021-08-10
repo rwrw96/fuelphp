@@ -21,9 +21,11 @@ class Controller_Post extends Controller {
     }
 
     public function action_form(){
-        return view::forge('post/form');
+        $view = view::forge('post/form', array(), false);
+        $view->title = '<h1>こんにちは</h1>';
+        return $view;
     }
-
+    
     public function action_save(){
         $form = array();
         $form['title'] = Input::post('title');

@@ -16,6 +16,7 @@
     <input type="text" name="body">
     <input type="submit" name="submit" value="投稿する">
     </form>
+    <?php echo $title; ?>
     
 </body>
 </html>

@@ -10,6 +10,6 @@ class Controller_Example extends Controller_Template{
 
     public function action_index(){
         $this->template->title = 'example限定のテンプレートですindex';
-        $this->template->content = 'hello!!index';
+        $this->template->content = '<h1>こんにちは</h1>';
     }
 }
