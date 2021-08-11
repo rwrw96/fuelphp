@@ -21,8 +21,16 @@ class Controller_Post extends Controller {
     }
 
     public function action_form(){
-        $view = view::forge('post/form', array(), false);
-        $view->title = '<h1>こんにちは</h1>';
+        // $data['date'] = Model_Post::find_all();
+
+        // $data = array();
+        $data['date'] = DB::select()-> from('posts')->where('title', '!=', 'テストです')->as_object()->execute();
+        echo '<pre>';
+        $view = view::forge('post/form', $data, false);
+
+        // $data['date'] = Model_Post::find_by('title', 'テストです', '=');
+        // $view = view::forge('post/form', $data, false);
+        // $view->title = '<h1>こんにちは</h1>';
         return $view;
 
         
@@ -38,5 +46,15 @@ class Controller_Post extends Controller {
         $post->save();
         Response::redirect('index.php/post');
 
+    }
+
+    public function action_show(){
+        // $data = array();
+        $data = Model_Post::find_by_pk(25);
+        $data->summary = 'テストです';
+        $data->save();
+        var_dump($data);
+        // $hello = Model_Post::find_by('id', 25);
+        // var_dump($hello);
     }
 }

@@ -16,9 +16,11 @@
     <input type="text" name="body">
     <input type="submit" name="submit" value="投稿する">
     </form>
-    <?php echo $title; ?>
+    <?php foreach($date as $aa): ?>
+        <p><?php echo $aa->title; ?></p>
+        <p><?php echo $aa->id; ?></p>
+    <?php endforeach; ?>
     <?php echo Html::anchor('index.php/post', '一覧確認する'); ?>
-    <?php echo Asset::img('164641_01.png'); ?>
 
 
     
